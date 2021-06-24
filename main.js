@@ -12,8 +12,8 @@
 const nav = document.querySelector('#header nav')
 const toggle = document.querySelectorAll('nav .toggle')
 
-for(const element of toggle) {
-  element.addEventListener('click', function() {
+for (const element of toggle) {
+  element.addEventListener('click', function () {
     nav.classList.toggle('show')
   })
 }
@@ -22,30 +22,30 @@ for(const element of toggle) {
 const links = document.querySelectorAll('nav ul li a')
 
 for (const link of links) {
-  link.addEventListener('click', function (){
+  link.addEventListener('click', function () {
     nav.classList.remove('show')
   })
 }
 
 // mudar o header da pagina quando der scroll
-const header = document.querySelector("#header")
-const navHeight = header.offsetHeight
+function changeHeaderWhenScroll() {
+  const header = document.querySelector('#header')
+  const navHeight = header.offsetHeight
 
-window.addEventListener('scroll', function(){
-  if(window.scrollY >= navHeight) {
-// scroll é maior do que a altura do header
-header.classList.add('scroll')
-  }else {
+  if (window.scrollY >= navHeight) {
+    // scroll é maior do que a altura do header
+    header.classList.add('scroll')
+  } else {
     // menor do que a altura do header
     header.classList.remove('scroll')
   }
-})
+}
 
 // Testimonials carousel slider swiper
 const swiper = new Swiper('.swiper-container', {
- slidesPerView:1,
+  slidesPerView: 1,
   pagination: {
-    el:'.swiper-pagination'
+    el: '.swiper-pagination'
   },
   mousewheel: true,
   keyboard: true
@@ -56,7 +56,7 @@ const scrollReveal = ScrollReveal({
   origin: 'top',
   distance: '30px',
   duration: 700,
-  reset: true 
+  reset: true
 })
 
 scrollReveal.reveal(
@@ -65,6 +65,23 @@ scrollReveal.reveal(
   #services header, #services .card,
   #testimonials header, #testimonials .testimonials,
   #contact .text, #contact .links
+  footer .brand, footer .social
   `,
-    {interval:100}
-    )
+  { interval: 100 }
+)
+
+// Botão voltar para o topo
+function backToTop() {
+  const backToTopButton = document.querySelector('.back-to-top')
+
+  if (window.scrollY >= 560) {
+    backToTopButton.classList.add('show')
+  } else {
+    backToTopButton.classList.remove('show')
+  }
+}
+// When Scroll
+window.addEventListener('scroll', function () {
+  changeHeaderWhenScroll()
+  backToTop()
+})

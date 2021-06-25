@@ -1,4 +1,4 @@
-/* ====RESET CSS===== */
+/*====  RESET ============================ */
 * {
   margin: 0;
   padding: 0;
@@ -18,9 +18,10 @@ img {
   height: auto;
 }
 
-/* ====VARIAVEIS===== */
+/*====  VARIABLES ============================ */
 :root {
   --header-height: 4.5rem;
+
   /* colors */
   --hue: 159;
   /* HSL color mode */
@@ -39,8 +40,8 @@ img {
   --title-font: 'Poppins', sans-serif;
   --body-font: 'DM Sans', sans-serif;
 }
-/* ======BASE====== */
-/* suaviza a rolagem */
+
+/*===  BASE ============================ */
 html {
   scroll-behavior: smooth;
 }
@@ -51,6 +52,7 @@ body {
   background: var(--body-color);
   -webkit-font-smoothing: antialiased;
 }
+
 .title {
   font: 700 var(--title-font-size) var(--title-font);
   color: var(--title-color);
@@ -61,7 +63,6 @@ body {
   background-color: var(--base-color);
   color: var(--text-color-light);
   height: 3.5rem;
-  right: 3.5rem;
   display: inline-flex;
   align-items: center;
   padding: 0 2rem;
@@ -75,7 +76,6 @@ body {
 }
 
 .divider-1 {
-  /* linear-gradient é uma variação de cor gradual */
   height: 1px;
   background: linear-gradient(
     270deg,
@@ -84,7 +84,7 @@ body {
   );
 }
 
-.divider- {
+.divider-2 {
   height: 1px;
   background: linear-gradient(
     270deg,
@@ -93,9 +93,7 @@ body {
   );
 }
 
-/* =======LAYOUT======= */
-/* a # responde a tag com id no html */
-
+/*====  LAYOUT ============================ */
 .container {
   margin-left: 1.5rem;
   margin-right: 1.5rem;
@@ -107,7 +105,6 @@ body {
 }
 
 .section {
-  /* calc faz um calculo para colocação em pixel */
   padding: calc(5rem + var(--header-height)) 0;
 }
 
@@ -144,10 +141,9 @@ body {
   box-shadow: 0px 0px 12px rgba(0, 0, 0, 0.15);
 }
 
-/* =======LOGO======= */
-/* o . responde a tag class */
+/*====  LOGO ============================ */
 .logo {
-  font: 700 1.31rem 'Poppins', sans-serif;
+  font: 700 1.31rem var(--title-font);
   color: var(--title-color);
 }
 
@@ -159,8 +155,7 @@ body {
   color: var(--body-color);
 }
 
-/* =======NAVIGATION======= */
-
+/*====  NAVIGATION ============================ */
 nav {
   height: var(--header-height);
   display: flex;
@@ -174,7 +169,7 @@ nav ul li {
 }
 
 nav ul li a {
-  transition: 0.2 s;
+  transition: color 0.2s;
   position: relative;
 }
 
@@ -211,21 +206,21 @@ nav .menu {
 nav .menu ul {
   display: none;
 }
-/* Mostrar o menu */
-/* não há espaço entre nav e .show pois ele não esta dentro dele, esta recebendo um classe */
+
+/* Mostrar menu */
 nav.show .menu {
   opacity: 1;
   visibility: visible;
 
   background: var(--body-color);
-  /* altura do dispositivo em contagem diferente - vh */
+
   height: 100vh;
   width: 100vw;
 
   position: fixed;
   top: 0;
   left: 0;
-  /* grid traz possibilidades, nesse caso centraliza os conteudos */
+
   display: grid;
   place-content: center;
 }
@@ -234,11 +229,11 @@ nav.show .menu ul {
   display: grid;
 }
 
-nav ul.grid {
+nav.show ul.grid {
   gap: 4rem;
 }
 
-/* ==TOGGLE MENU=== - é como um interruptos, que alterna entre liga e desliga */
+/* toggle menu */
 .toggle {
   color: var(--base-color);
   font-size: 1.5rem;
@@ -262,7 +257,7 @@ nav.show div.icon-close {
   top: 1.5rem;
 }
 
-/* =======HOME======== */
+/*====  HOME ============================ */
 #home {
   overflow: hidden;
 }
@@ -310,9 +305,9 @@ nav.show div.icon-close {
   margin-bottom: 2rem;
 }
 
-/* ====ABOUT==== */
+/*====  ABOUT ============================ */
 #about {
-  background-color: white;
+  background: white;
 }
 
 #about .container {
@@ -346,17 +341,15 @@ nav.show div.icon-close {
 #about .text {
   margin-left: 1.5rem;
   margin-right: 1.5rem;
-  text-align: center;
 }
 
-/* ======SERVICES======= */
+/*====  SERVICES ============================ */
 .cards.grid {
   gap: 1.5rem;
 }
 
 .card {
   padding: 3.625rem 2rem;
-  /* caixas sombreadas */
   box-shadow: 0px 0px 12px rgba(0, 0, 0, 0.08);
   border-bottom: 0.25rem solid var(--base-color);
   border-radius: 0.25rem 0.25rem 0 0;
@@ -375,7 +368,7 @@ nav.show div.icon-close {
   margin-bottom: 0.75rem;
 }
 
-/* =====TESTIMONIALS====== */
+/*====  TESTIMONIALS ============================ */
 #testimonials {
   background: white;
 }
@@ -393,7 +386,7 @@ nav.show div.icon-close {
 
 #testimonials blockquote {
   padding: 2rem;
-  box-shadow: 0px 0px 12px rgba(0, 0, 0.08);
+  box-shadow: 0px 0px 12px rgba(0, 0, 0, 0.08);
   border-radius: 0.25rem;
 }
 
@@ -422,7 +415,6 @@ nav.show div.icon-close {
   width: 2rem;
   height: 2rem;
   object-fit: cover;
-  /* imagem fica cortada em formato de círculo */
   clip-path: circle();
   margin-right: 0.5rem;
 }
@@ -442,7 +434,7 @@ nav.show div.icon-close {
   background: var(--base-color);
 }
 
-/* ====CONTACT==== */
+/*====  CONTACT ============================ */
 #contact .grid {
   gap: 4rem;
 }
@@ -451,7 +443,8 @@ nav.show div.icon-close {
   margin-bottom: 2rem;
 }
 
-#contact .button i #contact ul li i {
+#contact .button i,
+#contact ul li i {
   font-size: 1.5rem;
   margin-right: 0.625rem;
 }
@@ -469,7 +462,7 @@ nav.show div.icon-close {
   color: var(--base-color);
 }
 
-/* =====FOOTER===== */
+/*====  FOOTER ============================ */
 footer {
   background: var(--base-color);
 }
@@ -493,7 +486,6 @@ footer i {
   color: var(--text-color-light);
 }
 
-/* alinhamento dos icones de redes sociais */
 footer .social {
   grid-auto-flow: column;
   width: fit-content;
@@ -536,11 +528,10 @@ footer .social a:hover {
   transform: translateY(0);
 }
 
-/* ===Responsivo=== Media Queries */
+/*========= MEDIA QUERIES =========*/
 /* extra large devices: 1200 > */
 @media (min-width: 1200px) {
   /* reusable classes */
-
   .container {
     max-width: 1120px;
     margin-left: auto;
@@ -589,7 +580,6 @@ footer .social a:hover {
     display: none;
   }
 
-  /* aqui esta o main no codigo mas da erro */
   /* layout */
   main {
     margin-top: var(--header-height);
@@ -608,10 +598,6 @@ footer .social a:hover {
 
   #home .text {
     order: 0;
-  }
-
-  #home .text {
-    order: 0;
     max-width: 24rem;
     text-align: left;
   }
@@ -623,7 +609,6 @@ footer .social a:hover {
   }
 
   /* services */
-  /* criar cards em colunas */
   .cards {
     grid-template-columns: 1fr 1fr 1fr;
   }
@@ -650,7 +635,7 @@ footer .social a:hover {
   }
 
   /* footer */
-  footer .section {
+  footer.section {
     padding: 3.75rem 0;
   }
 
@@ -665,7 +650,6 @@ footer .social a:hover {
   }
 }
 /* large devices: 1023 > */
-
 /* large devices: 992 > */
 @media (min-width: 992px) {
   :root {

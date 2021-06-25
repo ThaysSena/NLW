@@ -87,7 +87,7 @@ function backToTop() {
 }
 
 // Menu ativo conforme a seção visível na pagina
-const sections = document.querySelectorAll('selection[id]')
+const sections = document.querySelectorAll('section[id]')
 function activateMenuAtCurrentSection() {
   const checkpoint = window.pageYOffset + (window.innerHeight / 8) * 4
 

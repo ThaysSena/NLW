@@ -589,7 +589,6 @@ footer .social a:hover {
     display: none;
   }
 
-  /* aqui esta o main no codigo mas da erro */
   /* layout */
   main {
     margin-top: var(--header-height);
@@ -626,43 +625,45 @@ footer .social a:hover {
   /* criar cards em colunas */
   .cards {
     grid-template-columns: 1fr 1fr 1fr;
+    display: grid;
+    gap: 10px;
   }
+}
 
-  .card {
-    padding-left: 3rem;
-    padding-right: 3rem;
-  }
+.card {
+  padding-left: 3rem;
+  padding-right: 3rem;
+}
 
-  /* testimonials */
-  #testimonials .container {
-    margin-left: auto;
-    margin-right: auto;
-  }
+/* testimonials */
+#testimonials .container {
+  margin-left: auto;
+  margin-right: auto;
+}
 
-  /* contact */
-  #contact .container {
-    grid-auto-flow: column;
-    align-items: center;
-  }
+/* contact */
+#contact .container {
+  grid-auto-flow: column;
+  align-items: center;
+}
 
-  #contact .text {
-    max-width: 25rem;
-  }
+#contact .text {
+  max-width: 25rem;
+}
 
-  /* footer */
-  footer .section {
-    padding: 3.75rem 0;
-  }
+/* footer */
+footer .section {
+  padding: 3.75rem 0;
+}
 
-  footer .container {
-    grid-auto-flow: column;
-    align-items: center;
-    justify-content: space-between;
-  }
+footer .container {
+  grid-auto-flow: column;
+  align-items: center;
+  justify-content: space-between;
+}
 
-  footer .logo {
-    font-size: 2.25rem;
-  }
+footer .logo {
+  font-size: 2.25rem;
 }
 /* large devices: 1023 > */
 
